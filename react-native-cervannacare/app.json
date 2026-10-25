@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Cervanna Care",
+    "slug": "cervanna-care",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D7A68"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cervannacare.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D7A68"
+      },
+      "package": "com.cervannacare.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

@@ -1,20 +1,26 @@
+const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
 const config = getDefaultConfig(__dirname);
 
-// Enable package exports resolution for React Native subpath exports
+// Intercept deep internal react-native imports that changed in React Native 0.76+
 config.resolver = {
   ...config.resolver,
-  unstable_enablePackageExports: true,
   resolveRequest: (context, moduleName, platform) => {
-    // Fallback handler for react-native internal subpath resolution
-    if (moduleName === 'react-native/unstable-internals-do-not-use') {
-      try {
-        return context.resolveRequest(context, 'react-native/Libraries/Image/AssetSourceResolver', platform);
-      } catch (err) {
-        // Fallback to default resolution if custom path fails
-      }
+    if (moduleName === 'react-native/asset-registry') {
+      return {
+        filePath: path.resolve(__dirname, 'shims/asset-registry.js'),
+        type: 'sourceFile',
+      };
     }
+
+    if (moduleName === 'react-native/unstable-internals-do-not-use') {
+      return {
+        filePath: path.resolve(__dirname, 'shims/unstable-internals.js'),
+        type: 'sourceFile',
+      };
+    }
+
     return context.resolveRequest(context, moduleName, platform);
   },
 };

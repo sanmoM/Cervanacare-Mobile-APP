@@ -1,0 +1,6 @@
+{
+  "name": "Cervanna Care",
+  "description": "Kenya's trusted home care and healthcare marketplace connecting families with verified caregivers, nurses, physiotherapists, and house managers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

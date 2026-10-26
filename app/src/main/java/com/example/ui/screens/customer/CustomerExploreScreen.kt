@@ -62,7 +62,11 @@ fun CustomerExploreScreen(
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = onSearchChange,
-                    placeholder = { Text("Search specialists, skills, or services...", fontSize = 13.sp) },
+                    placeholder = { Text("Search specialists, skills, or services...", fontSize = 13.sp, color = CervannaPlaceholder) },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedPlaceholderColor = CervannaPlaceholder,
+                        unfocusedPlaceholderColor = CervannaPlaceholder
+                    ),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Search,
@@ -102,14 +106,36 @@ fun CustomerExploreScreen(
                         FilterChip(
                             selected = showFilterSheet,
                             onClick = { showFilterSheet = true },
-                            label = { Text("All Filters", fontSize = 11.sp) },
+                            label = {
+                                Text(
+                                    text = "All Filters",
+                                    fontSize = 11.sp,
+                                    color = if (showFilterSheet) Color.White else CervannaTealPrimary,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Outlined.FilterAlt,
                                     contentDescription = null,
+                                    tint = if (showFilterSheet) Color.White else CervannaTealPrimary,
                                     modifier = Modifier.size(16.dp)
                                 )
                             },
+                            colors = FilterChipDefaults.filterChipColors(
+                                containerColor = Color.White,
+                                labelColor = CervannaTealPrimary,
+                                iconColor = CervannaTealPrimary,
+                                selectedContainerColor = CervannaTealPrimary,
+                                selectedLabelColor = Color.White,
+                                selectedLeadingIconColor = Color.White
+                            ),
+                            border = FilterChipDefaults.filterChipBorder(
+                                enabled = true,
+                                selected = showFilterSheet,
+                                borderColor = CervannaTealPrimary.copy(alpha = 0.5f),
+                                selectedBorderColor = CervannaTealPrimary
+                            ),
                             modifier = Modifier.testTag("all_filters_chip")
                         )
 
@@ -119,7 +145,28 @@ fun CustomerExploreScreen(
                             FilterChip(
                                 selected = isSelected,
                                 onClick = { onSelectServiceCategory(if (isSelected) null else cat) },
-                                label = { Text(cat.displayName, fontSize = 11.sp) },
+                                label = {
+                                    Text(
+                                        text = cat.displayName,
+                                        fontSize = 11.sp,
+                                        color = if (isSelected) Color.White else CervannaTealPrimary,
+                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
+                                    )
+                                },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    containerColor = Color.White,
+                                    labelColor = CervannaTealPrimary,
+                                    iconColor = CervannaTealPrimary,
+                                    selectedContainerColor = CervannaTealPrimary,
+                                    selectedLabelColor = Color.White,
+                                    selectedLeadingIconColor = Color.White
+                                ),
+                                border = FilterChipDefaults.filterChipBorder(
+                                    enabled = true,
+                                    selected = isSelected,
+                                    borderColor = CervannaTealPrimary.copy(alpha = 0.5f),
+                                    selectedBorderColor = CervannaTealPrimary
+                                ),
                                 modifier = Modifier.testTag("filter_chip_${cat.name}")
                             )
                         }
@@ -222,10 +269,13 @@ fun CustomerExploreScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
                         onClick = onResetFilters,
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaTealPrimary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(10.dp)
                     ) {
-                        Text("Reset All Filters")
+                        Text("Reset All Filters", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }
@@ -292,12 +342,34 @@ fun CustomerExploreScreen(
                     horizontalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     ProfessionalCategory.values().forEach { pc ->
+                        val isSelected = selectedProfessionalCategory == pc
                         FilterChip(
-                            selected = selectedProfessionalCategory == pc,
+                            selected = isSelected,
                             onClick = {
-                                onSelectProfessionalCategory(if (selectedProfessionalCategory == pc) null else pc)
+                                onSelectProfessionalCategory(if (isSelected) null else pc)
                             },
-                            label = { Text(pc.displayName, fontSize = 11.sp) }
+                            label = {
+                                Text(
+                                    text = pc.displayName,
+                                    fontSize = 11.sp,
+                                    color = if (isSelected) Color.White else CervannaTealPrimary,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
+                                )
+                            },
+                            colors = FilterChipDefaults.filterChipColors(
+                                containerColor = Color.White,
+                                labelColor = CervannaTealPrimary,
+                                iconColor = CervannaTealPrimary,
+                                selectedContainerColor = CervannaTealPrimary,
+                                selectedLabelColor = Color.White,
+                                selectedLeadingIconColor = Color.White
+                            ),
+                            border = FilterChipDefaults.filterChipBorder(
+                                enabled = true,
+                                selected = isSelected,
+                                borderColor = CervannaTealPrimary.copy(alpha = 0.5f),
+                                selectedBorderColor = CervannaTealPrimary
+                            )
                         )
                     }
                 }
@@ -320,10 +392,32 @@ fun CustomerExploreScreen(
                     horizontalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     locs.forEach { loc ->
+                        val isSelected = selectedLocation == loc
                         FilterChip(
-                            selected = selectedLocation == loc,
-                            onClick = { onSelectLocation(if (selectedLocation == loc) null else loc) },
-                            label = { Text(loc, fontSize = 11.sp) }
+                            selected = isSelected,
+                            onClick = { onSelectLocation(if (isSelected) null else loc) },
+                            label = {
+                                Text(
+                                    text = loc,
+                                    fontSize = 11.sp,
+                                    color = if (isSelected) Color.White else CervannaTealPrimary,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
+                                )
+                            },
+                            colors = FilterChipDefaults.filterChipColors(
+                                containerColor = Color.White,
+                                labelColor = CervannaTealPrimary,
+                                iconColor = CervannaTealPrimary,
+                                selectedContainerColor = CervannaTealPrimary,
+                                selectedLabelColor = Color.White,
+                                selectedLeadingIconColor = Color.White
+                            ),
+                            border = FilterChipDefaults.filterChipBorder(
+                                enabled = true,
+                                selected = isSelected,
+                                borderColor = CervannaTealPrimary.copy(alpha = 0.5f),
+                                selectedBorderColor = CervannaTealPrimary
+                            )
                         )
                     }
                 }
@@ -335,10 +429,13 @@ fun CustomerExploreScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("apply_filters_button"),
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    ),
                     shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text("Apply Filters", fontWeight = FontWeight.Bold)
+                    Text("Apply Filters", fontWeight = FontWeight.Bold, color = Color.White)
                 }
                 Spacer(modifier = Modifier.height(24.dp))
             }

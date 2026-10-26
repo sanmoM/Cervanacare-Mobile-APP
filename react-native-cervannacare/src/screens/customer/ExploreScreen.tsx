@@ -37,6 +37,7 @@ export default function ExploreScreen({ route, navigation }: any) {
         <TextInput
           style={styles.searchInput}
           placeholder="Search by nurse, physiotherapist, nanny, or skill..."
+          placeholderTextColor="#ddd"
           value={search}
           onChangeText={setSearch}
         />
@@ -109,22 +110,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 16,
-    backgroundColor: '#F1F5F9',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#400022',
     marginRight: 8,
   },
-  chipActive: { backgroundColor: '#CCFBF1' },
-  chipText: { fontSize: 11, color: '#475569' },
-  chipTextActive: { color: '#0F766E', fontWeight: 'bold' },
+  chipActive: { backgroundColor: '#400022' },
+  chipText: { fontSize: 11, color: '#400022', fontWeight: '600' },
+  chipTextActive: { color: '#FFFFFF', fontWeight: 'bold' },
   countText: { fontSize: 12, fontWeight: '600', color: '#64748B', marginBottom: 10 },
   card: { backgroundColor: '#FFFFFF', borderRadius: 14, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: '#E2E8F0' },
-  avatar: { width: 44, height: 44, borderRadius: 22, backgroundColor: '#0D7A68', justifyContent: 'center', alignItems: 'center' },
+  avatar: { width: 44, height: 44, borderRadius: 22, backgroundColor: '#400022', justifyContent: 'center', alignItems: 'center' },
   avatarText: { color: '#FFFFFF', fontWeight: 'bold' },
   name: { fontSize: 14, fontWeight: 'bold', color: '#0F172A' },
   title: { fontSize: 11, color: '#64748B', marginTop: 1 },
-  meta: { fontSize: 11, color: '#0D7A68', marginTop: 2 },
+  meta: { fontSize: 11, color: '#400022', marginTop: 2 },
   locations: { fontSize: 10, color: '#94A3B8', marginTop: 2 },
   footer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#F1F5F9' },
-  rate: { fontSize: 13, fontWeight: 'bold', color: '#09584B' },
-  bookBtn: { backgroundColor: '#0D7A68', borderRadius: 8, paddingVertical: 6, paddingHorizontal: 12 },
+  rate: { fontSize: 13, fontWeight: 'bold', color: '#400022' },
+  bookBtn: { backgroundColor: '#400022', borderRadius: 8, paddingVertical: 6, paddingHorizontal: 12 },
   bookBtnText: { color: '#FFFFFF', fontSize: 11, fontWeight: 'bold' },
 });

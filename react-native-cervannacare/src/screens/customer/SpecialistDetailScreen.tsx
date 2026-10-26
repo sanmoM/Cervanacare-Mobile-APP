@@ -82,7 +82,7 @@ export const SpecialistDetailScreen: React.FC = () => {
           </View>
           <View style={styles.heroInfo}>
             <View style={styles.verificationBadge}>
-              <Ionicons name="shield-checkmark" size={14} color="#0D7A68" />
+              <Ionicons name="shield-checkmark" size={14} color="#400022" />
               <Text style={styles.verificationText}>Vetted & Background Checked</Text>
             </View>
             <Text style={styles.name}>{specialist.name}</Text>
@@ -127,7 +127,7 @@ export const SpecialistDetailScreen: React.FC = () => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Credentials & Certifications</Text>
           <View style={styles.credentialItem}>
-            <Ionicons name="ribbon-outline" size={20} color="#0D7A68" />
+            <Ionicons name="ribbon-outline" size={20} color="#400022" />
             <View style={styles.credentialTextWrap}>
               <Text style={styles.credentialTitle}>Education & Experience</Text>
               <Text style={styles.credentialDesc}>
@@ -137,7 +137,7 @@ export const SpecialistDetailScreen: React.FC = () => {
           </View>
           {specialist.qualifications.map((q, idx) => (
             <View key={idx} style={styles.credentialItem}>
-              <Ionicons name="checkmark-circle-outline" size={20} color="#0D7A68" />
+              <Ionicons name="checkmark-circle-outline" size={20} color="#400022" />
               <View style={styles.credentialTextWrap}>
                 <Text style={styles.credentialTitle}>{q}</Text>
               </View>
@@ -201,6 +201,7 @@ export const SpecialistDetailScreen: React.FC = () => {
                 value={selectedDate}
                 onChangeText={setSelectedDate}
                 placeholder="e.g. 28 Oct 2026, 8:00 AM - 5:00 PM"
+                placeholderTextColor="#ddd"
               />
 
               <Text style={styles.inputLabel}>Patient Care Notes / Requirements</Text>
@@ -209,6 +210,7 @@ export const SpecialistDetailScreen: React.FC = () => {
                 value={careNotes}
                 onChangeText={setCareNotes}
                 placeholder="Describe patient condition, mobility needs, medications, or any special requests..."
+                placeholderTextColor="#ddd"
                 multiline
                 numberOfLines={4}
               />
@@ -298,16 +300,16 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 16,
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   avatarLetter: {
     fontSize: 26,
     fontWeight: '800',
-    color: '#0D7A68',
+    color: '#400022',
   },
   heroInfo: {
     flex: 1,
@@ -317,7 +319,7 @@ const styles = StyleSheet.create({
   verificationBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 6,
@@ -327,7 +329,7 @@ const styles = StyleSheet.create({
   verificationText: {
     fontSize: 11,
     fontWeight: '600',
-    color: '#0D7A68',
+    color: '#400022',
     marginLeft: 4,
   },
   name: {
@@ -338,7 +340,7 @@ const styles = StyleSheet.create({
   category: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#0D7A68',
+    color: '#400022',
     marginTop: 2,
   },
   ratingRow: {
@@ -382,7 +384,7 @@ const styles = StyleSheet.create({
   rateValue: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
     marginTop: 2,
   },
   subRate: {
@@ -454,14 +456,14 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   chip: {
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 16,
   },
   chipText: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '500',
   },
   bodyText: {
@@ -492,11 +494,11 @@ const styles = StyleSheet.create({
   bottomPriceValue: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
   },
   bookButton: {
     flexDirection: 'row',
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 12,
@@ -605,10 +607,10 @@ const styles = StyleSheet.create({
   totalValue: {
     fontSize: 16,
     fontWeight: '800',
-    color: '#0D7A68',
+    color: '#400022',
   },
   proceedButton: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: 'center',

@@ -114,7 +114,7 @@ export const SpecialistEarningsScreen: React.FC = () => {
         {/* Healthcare vs Domestic Subscription Transparency */}
         <View style={styles.commissionCard}>
           <View style={styles.commHeader}>
-            <Ionicons name="shield-checkmark" size={18} color="#0D7A68" />
+            <Ionicons name="shield-checkmark" size={18} color="#400022" />
             <Text style={styles.commTitle}>Cervanna Fair Pricing Model</Text>
           </View>
           <Text style={styles.commDesc}>
@@ -158,7 +158,7 @@ export const SpecialistEarningsScreen: React.FC = () => {
                 <Ionicons
                   name={tx.type === 'WITHDRAWAL' ? 'arrow-up-circle' : 'arrow-down-circle'}
                   size={24}
-                  color={tx.type === 'WITHDRAWAL' ? '#EF4444' : '#0D7A68'}
+                  color={tx.type === 'WITHDRAWAL' ? '#EF4444' : '#400022'}
                 />
               </View>
               <View style={styles.txInfo}>
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   balanceCard: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     marginHorizontal: 16,
     marginTop: 16,
     padding: 20,
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
   },
   balanceLabel: {
     fontSize: 13,
-    color: '#E6F4F1',
+    color: '#FBE8F0',
     fontWeight: '500',
   },
   balanceAmount: {
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
   commTitle: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
     marginLeft: 6,
   },
   commDesc: {
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   txPayout: {
-    color: '#0D7A68',
+    color: '#400022',
   },
   txWithdrawal: {
     color: '#EF4444',
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   confirmWithdrawBtn: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: 'center',

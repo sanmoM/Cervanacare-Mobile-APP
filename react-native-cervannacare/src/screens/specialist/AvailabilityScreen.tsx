@@ -106,7 +106,7 @@ export const SpecialistAvailabilityScreen: React.FC = () => {
               value={shifts.dayShift}
               onValueChange={(val) => setShifts({ ...shifts, dayShift: val })}
               trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={shifts.dayShift ? '#0D7A68' : '#F1F5F9'}
+              thumbColor={shifts.dayShift ? '#400022' : '#F1F5F9'}
             />
           </View>
 
@@ -119,7 +119,7 @@ export const SpecialistAvailabilityScreen: React.FC = () => {
               value={shifts.nightShift}
               onValueChange={(val) => setShifts({ ...shifts, nightShift: val })}
               trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={shifts.nightShift ? '#0D7A68' : '#F1F5F9'}
+              thumbColor={shifts.nightShift ? '#400022' : '#F1F5F9'}
             />
           </View>
 
@@ -132,7 +132,7 @@ export const SpecialistAvailabilityScreen: React.FC = () => {
               value={shifts.liveIn}
               onValueChange={(val) => setShifts({ ...shifts, liveIn: val })}
               trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={shifts.liveIn ? '#0D7A68' : '#F1F5F9'}
+              thumbColor={shifts.liveIn ? '#400022' : '#F1F5F9'}
             />
           </View>
 
@@ -145,7 +145,7 @@ export const SpecialistAvailabilityScreen: React.FC = () => {
               value={shifts.emergencyCalls}
               onValueChange={(val) => setShifts({ ...shifts, emergencyCalls: val })}
               trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={shifts.emergencyCalls ? '#0D7A68' : '#F1F5F9'}
+              thumbColor={shifts.emergencyCalls ? '#400022' : '#F1F5F9'}
             />
           </View>
         </View>
@@ -166,7 +166,7 @@ export const SpecialistAvailabilityScreen: React.FC = () => {
                   <Ionicons
                     name={isSelected ? 'checkmark-circle' : 'location-outline'}
                     size={16}
-                    color={isSelected ? '#0D7A68' : '#64748B'}
+                    color={isSelected ? '#400022' : '#64748B'}
                   />
                   <Text style={[styles.locChipText, isSelected && styles.locChipTextActive]}>
                     {loc}
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   dayChipActive: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
   },
   dayText: {
     fontSize: 12,
@@ -294,9 +294,9 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   locationChipActive: {
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     borderWidth: 1,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   locChipText: {
     fontSize: 13,
@@ -304,14 +304,14 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   locChipTextActive: {
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '700',
   },
   saveButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     marginHorizontal: 16,
     marginTop: 24,
     paddingVertical: 14,

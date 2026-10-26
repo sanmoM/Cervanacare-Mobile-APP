@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.example.data.model.NotificationItem
 import com.example.data.model.UserRole
+import androidx.compose.ui.graphics.Color
 import com.example.ui.theme.*
 
 @Composable
@@ -145,10 +146,13 @@ fun NotificationsDialog(
                         .fillMaxWidth()
                         .padding(16.dp)
                         .testTag("dismiss_notifications_button"),
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    ),
                     shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text("Close", fontWeight = FontWeight.Bold)
+                    Text("Close", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }

@@ -139,7 +139,11 @@ fun CustomerBookingsScreen(
                     OutlinedTextField(
                         value = cancelReason,
                         onValueChange = { cancelReason = it },
-                        placeholder = { Text("Reason for cancellation...") },
+                        placeholder = { Text("Reason for cancellation...", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
@@ -151,9 +155,12 @@ fun CustomerBookingsScreen(
                         bookingToCancel = null
                         cancelReason = ""
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTextTertiary)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFDC2626),
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Confirm Cancel")
+                    Text("Confirm Cancel", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {
@@ -174,6 +181,11 @@ fun CustomerBookingsScreen(
                     OutlinedTextField(
                         value = newRescheduleDate,
                         onValueChange = { newRescheduleDate = it },
+                        placeholder = { Text("e.g. 28 Oct 2026", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
@@ -184,9 +196,12 @@ fun CustomerBookingsScreen(
                         bookingToReschedule?.let { onRescheduleBooking(it.id, newRescheduleDate) }
                         bookingToReschedule = null
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Save Reschedule")
+                    Text("Save Reschedule", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {
@@ -356,25 +371,31 @@ fun CustomerBookingCard(
                 if (booking.paymentStatus == PaymentStatus.UNPAID && booking.status != BookingStatus.CANCELLED) {
                     Button(
                         onClick = onPayClick,
-                        colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MpesaGreen,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(8.dp),
                         contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
                         modifier = Modifier.padding(end = 6.dp)
                     ) {
-                        Text("Pay M-Pesa", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                        Text("Pay M-Pesa", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
 
                 if (booking.status == BookingStatus.COMPLETED) {
                     Button(
                         onClick = onReviewClick,
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaAmberSecondary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaAmberSecondary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(8.dp),
                         contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp)
                     ) {
-                        Icon(Icons.Default.Star, contentDescription = null, modifier = Modifier.size(14.dp))
+                        Icon(Icons.Default.Star, contentDescription = null, tint = Color.White, modifier = Modifier.size(14.dp))
                         Spacer(modifier = Modifier.width(4.dp))
-                        Text("Review", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                        Text("Review", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 } else if (booking.status != BookingStatus.CANCELLED) {
                     OutlinedButton(

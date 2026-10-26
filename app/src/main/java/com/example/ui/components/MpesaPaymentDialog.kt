@@ -182,10 +182,13 @@ fun MpesaPaymentDialog(
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("mpesa_done_button"),
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaTealPrimary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(12.dp)
                     ) {
-                        Text("Done", fontWeight = FontWeight.Bold)
+                        Text("Done", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 } else {
                     // Payment input & trigger state
@@ -239,7 +242,11 @@ fun MpesaPaymentDialog(
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("mpesa_phone_input"),
-                        placeholder = { Text("e.g. 0712 345 678") },
+                        placeholder = { Text("e.g. 0712 345 678", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         leadingIcon = {
                             Icon(
                                 imageVector = Icons.Default.PhoneAndroid,
@@ -268,7 +275,10 @@ fun MpesaPaymentDialog(
                             .fillMaxWidth()
                             .height(50.dp)
                             .testTag("mpesa_submit_button"),
-                        colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MpesaGreen,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(12.dp)
                     ) {
                         if (isProcessing) {
@@ -278,18 +288,20 @@ fun MpesaPaymentDialog(
                                 strokeWidth = 2.dp
                             )
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Prompting M-Pesa STK...")
+                            Text("Prompting M-Pesa STK...", color = Color.White)
                         } else {
                             Icon(
                                 imageVector = Icons.Default.ReceiptLong,
                                 contentDescription = null,
+                                tint = Color.White,
                                 modifier = Modifier.size(18.dp)
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
                                 text = "Send M-Pesa Prompt",
                                 fontWeight = FontWeight.Bold,
-                                fontSize = 15.sp
+                                fontSize = 15.sp,
+                                color = Color.White
                             )
                         }
                     }

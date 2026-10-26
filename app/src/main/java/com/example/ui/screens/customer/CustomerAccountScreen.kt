@@ -254,9 +254,12 @@ fun CustomerAccountScreen(
             confirmButton = {
                 Button(
                     onClick = { showDeleteDialog = false },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDC2626))
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFDC2626),
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Confirm Request")
+                    Text("Confirm Request", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {
@@ -276,9 +279,12 @@ fun CustomerAccountScreen(
                         showLogoutDialog = false
                         onLogout()
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Log Out")
+                    Text("Log Out", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {

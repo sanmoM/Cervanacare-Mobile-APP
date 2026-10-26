@@ -31,7 +31,7 @@ private val LightColorScheme = lightColorScheme(
 
 private val DarkColorScheme = darkColorScheme(
     primary = CervannaTealLight,
-    onPrimary = Color(0xFF00382E),
+    onPrimary = Color.White,
     primaryContainer = CervannaTealDark,
     onPrimaryContainer = CervannaTealContainer,
     secondary = CervannaAmberSecondary,

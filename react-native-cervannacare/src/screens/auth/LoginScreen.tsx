@@ -83,6 +83,7 @@ export default function LoginScreen() {
             <TextInput
               style={styles.input}
               placeholder="e.g. Sarah Kamau"
+              placeholderTextColor="#ddd"
               value={name}
               onChangeText={setName}
             />
@@ -94,6 +95,7 @@ export default function LoginScreen() {
           <TextInput
             style={styles.input}
             placeholder="e.g. 0712 345 678"
+            placeholderTextColor="#ddd"
             keyboardType="phone-pad"
             value={emailOrPhone}
             onChangeText={setEmailOrPhone}
@@ -105,6 +107,7 @@ export default function LoginScreen() {
           <TextInput
             style={styles.input}
             placeholder="••••••••"
+            placeholderTextColor="#ddd"
             secureTextEntry
             value={password}
             onChangeText={setPassword}
@@ -149,19 +152,19 @@ const styles = StyleSheet.create({
     width: 58,
     height: 58,
     borderRadius: 16,
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
   },
   logoBadgeText: { color: '#FFFFFF', fontSize: 32, fontWeight: 'bold' },
-  brandTitle: { fontSize: 24, fontWeight: 'bold', color: '#09584B' },
+  brandTitle: { fontSize: 24, fontWeight: 'bold', color: '#400022' },
   brandSubtitle: { fontSize: 12, color: '#64748B', textAlign: 'center', marginTop: 4 },
   tabContainer: { flexDirection: 'row', backgroundColor: '#E2E8F0', borderRadius: 12, padding: 4, marginBottom: 20 },
   tabButton: { flex: 1, paddingVertical: 10, alignItems: 'center', borderRadius: 10 },
   tabActive: { backgroundColor: '#FFFFFF' },
   tabText: { fontSize: 13, color: '#64748B' },
-  tabTextActive: { fontWeight: 'bold', color: '#0D7A68' },
+  tabTextActive: { fontWeight: 'bold', color: '#400022' },
   sectionLabel: { fontSize: 13, fontWeight: '600', color: '#0F172A', marginBottom: 8 },
   roleRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
   roleCard: {
@@ -172,7 +175,7 @@ const styles = StyleSheet.create({
     borderColor: '#E2E8F0',
     backgroundColor: '#FFFFFF',
   },
-  roleCardActive: { borderColor: '#0D7A68', backgroundColor: '#F0FDFA' },
+  roleCardActive: { borderColor: '#400022', backgroundColor: '#FBE8F0' },
   roleCardIcon: { fontSize: 22, marginBottom: 4 },
   roleTitle: { fontSize: 12, fontWeight: 'bold', color: '#0F172A' },
   roleDesc: { fontSize: 10, color: '#64748B', marginTop: 2 },
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   submitButton: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: 'center',
@@ -199,12 +202,12 @@ const styles = StyleSheet.create({
   quickLabel: { fontSize: 11, fontWeight: 'bold', color: '#64748B', letterSpacing: 0.8, marginBottom: 10 },
   demoButton: {
     borderWidth: 1,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
     borderRadius: 12,
     paddingVertical: 12,
     alignItems: 'center',
     marginBottom: 10,
     backgroundColor: '#FFFFFF',
   },
-  demoButtonText: { color: '#0D7A68', fontSize: 13, fontWeight: '600' },
+  demoButtonText: { color: '#400022', fontSize: 13, fontWeight: '600' },
 });

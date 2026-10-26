@@ -188,6 +188,11 @@ fun AuthScreen(
                     value = nameInput,
                     onValueChange = { nameInput = it },
                     label = { Text("Full Name") },
+                    placeholder = { Text("e.g. Sarah Kamau", color = CervannaPlaceholder) },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedPlaceholderColor = CervannaPlaceholder,
+                        unfocusedPlaceholderColor = CervannaPlaceholder
+                    ),
                     leadingIcon = { Icon(Icons.Default.PersonOutline, contentDescription = null, tint = CervannaTealPrimary) },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -202,6 +207,11 @@ fun AuthScreen(
                 value = emailOrPhoneInput,
                 onValueChange = { emailOrPhoneInput = it },
                 label = { Text(if (isRegisterMode) "Email or Phone (+254 7XX...)" else "Email or Phone Number") },
+                placeholder = { Text(if (isRegisterMode) "e.g. 0712 345 678 or user@example.com" else "e.g. 0712 345 678", color = CervannaPlaceholder) },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedPlaceholderColor = CervannaPlaceholder,
+                    unfocusedPlaceholderColor = CervannaPlaceholder
+                ),
                 leadingIcon = { Icon(Icons.Default.Email, contentDescription = null, tint = CervannaTealPrimary) },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -216,6 +226,11 @@ fun AuthScreen(
                 value = passwordInput,
                 onValueChange = { passwordInput = it },
                 label = { Text("Password") },
+                placeholder = { Text("••••••••", color = CervannaPlaceholder) },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedPlaceholderColor = CervannaPlaceholder,
+                    unfocusedPlaceholderColor = CervannaPlaceholder
+                ),
                 leadingIcon = { Icon(Icons.Default.Lock, contentDescription = null, tint = CervannaTealPrimary) },
                 trailingIcon = {
                     IconButton(onClick = { passwordVisible = !passwordVisible }) {
@@ -268,14 +283,18 @@ fun AuthScreen(
                     .fillMaxWidth()
                     .height(50.dp)
                     .testTag("auth_submit_button"),
-                colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = CervannaTealPrimary,
+                    contentColor = Color.White
+                ),
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text(
                     text = if (isRegisterMode) "Create ${if (selectedRole == UserRole.CUSTOMER) "Customer" else "Specialist"} Account"
                     else "Sign In as ${if (selectedRole == UserRole.CUSTOMER) "Customer" else "Specialist"}",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp
+                    fontSize = 15.sp,
+                    color = Color.White
                 )
             }
 

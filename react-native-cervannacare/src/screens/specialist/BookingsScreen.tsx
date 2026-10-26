@@ -110,7 +110,7 @@ export const SpecialistBookingsScreen: React.FC = () => {
             style={styles.callButton}
             onPress={() => handleCallClient(item.customerPhone)}
           >
-            <Ionicons name="call-outline" size={16} color="#0D7A68" style={{ marginRight: 6 }} />
+            <Ionicons name="call-outline" size={16} color="#400022" style={{ marginRight: 6 }} />
             <Text style={styles.callButtonText}>Call Client</Text>
           </TouchableOpacity>
 
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F1F5F9',
   },
   tabButtonActive: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
   },
   tabText: {
     fontSize: 12,
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   },
   serviceName: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 2,
   },
@@ -316,21 +316,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     paddingVertical: 10,
     borderRadius: 8,
   },
   callButtonText: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
   },
   completeButton: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingVertical: 10,
     borderRadius: 8,
   },

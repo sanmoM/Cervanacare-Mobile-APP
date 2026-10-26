@@ -91,6 +91,7 @@ export function MpesaModal({
                 value={phone}
                 onChangeText={setPhone}
                 placeholder="0712 345 678"
+                placeholderTextColor="#ddd"
               />
               <Text style={styles.hint}>
                 You will receive an STK Push prompt on your phone to enter your 4-digit M-Pesa PIN.
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: 11, color: '#64748B' },
   amountCard: { backgroundColor: '#F0FDFA', borderRadius: 12, padding: 14, alignItems: 'center', marginBottom: 14 },
   amountLabel: { fontSize: 12, color: '#0F766E' },
-  amountValue: { fontSize: 26, fontWeight: 'bold', color: '#0D7A68' },
+  amountValue: { fontSize: 26, fontWeight: 'bold', color: '#400022' },
   descLabel: { fontSize: 12, color: '#64748B', marginTop: 4 },
   phoneLabel: { fontSize: 12, fontWeight: '600', color: '#334155', marginBottom: 6 },
   phoneInput: { backgroundColor: '#F8FAFC', borderWidth: 1, borderColor: '#CBD5E1', borderRadius: 10, padding: 10, fontSize: 15 },
@@ -145,6 +146,6 @@ const styles = StyleSheet.create({
   successSubtitle: { fontSize: 12, color: '#64748B', marginBottom: 14 },
   receiptBox: { backgroundColor: '#F1F5F9', padding: 12, borderRadius: 10, width: '100%', marginBottom: 16 },
   receiptLabel: { fontSize: 12, color: '#334155', marginVertical: 2 },
-  doneButton: { backgroundColor: '#0D7A68', paddingVertical: 12, width: '100%', borderRadius: 10, alignItems: 'center' },
+  doneButton: { backgroundColor: '#400022', paddingVertical: 12, width: '100%', borderRadius: 10, alignItems: 'center' },
   doneButtonText: { color: '#FFFFFF', fontWeight: 'bold' },
 });

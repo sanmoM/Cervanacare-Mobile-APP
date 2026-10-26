@@ -74,18 +74,22 @@ fun SpecialistEarningsScreen(
 
                     Button(
                         onClick = { showPayoutDialog = true },
-                        colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MpesaGreen,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("request_mpesa_payout_btn")
                     ) {
-                        Icon(Icons.Default.PhoneAndroid, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Icon(Icons.Default.PhoneAndroid, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = "Withdraw to Safaricom M-Pesa",
                             fontWeight = FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.White
                         )
                     }
                 }
@@ -214,13 +218,16 @@ fun SpecialistEarningsScreen(
 
                     Button(
                         onClick = onRenewSubscription,
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaAmberSecondary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaAmberSecondary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("renew_subscription_btn")
                     ) {
-                        Text("Renew via M-Pesa (KSh ${subscriptionPlan.priceKsh})", fontWeight = FontWeight.Bold)
+                        Text("Renew via M-Pesa (KSh ${subscriptionPlan.priceKsh})", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }
@@ -310,7 +317,12 @@ fun SpecialistEarningsScreen(
                         value = payoutPhoneNumber,
                         onValueChange = { payoutPhoneNumber = it },
                         modifier = Modifier.fillMaxWidth(),
-                        label = { Text("M-Pesa Phone Number") }
+                        label = { Text("M-Pesa Phone Number") },
+                        placeholder = { Text("e.g. 0712 345 678", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        )
                     )
                 }
             },
@@ -320,9 +332,12 @@ fun SpecialistEarningsScreen(
                         onRequestPayout(earningsSummary.pendingPayoutKsh)
                         showPayoutDialog = false
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MpesaGreen,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Send Payout")
+                    Text("Send Payout", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {

@@ -110,7 +110,11 @@ fun ReviewDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("review_comment_input"),
-                    placeholder = { Text("Share your experience with this care specialist...", fontSize = 13.sp) },
+                    placeholder = { Text("Share your experience with this care specialist...", fontSize = 13.sp, color = CervannaPlaceholder) },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedPlaceholderColor = CervannaPlaceholder,
+                        unfocusedPlaceholderColor = CervannaPlaceholder
+                    ),
                     minLines = 3,
                     maxLines = 5,
                     shape = RoundedCornerShape(12.dp)
@@ -123,10 +127,13 @@ fun ReviewDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("submit_review_button"),
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    ),
                     shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text("Submit Review", fontWeight = FontWeight.Bold)
+                    Text("Submit Review", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }

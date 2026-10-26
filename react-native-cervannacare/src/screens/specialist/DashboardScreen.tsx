@@ -45,7 +45,7 @@ export const SpecialistDashboardScreen: React.FC = () => {
             <Text style={styles.greeting}>Welcome back,</Text>
             <Text style={styles.specialistName}>{user?.fullName || 'Nurse Faith Muthoni'}</Text>
             <View style={styles.badgeRow}>
-              <Ionicons name="shield-checkmark" size={14} color="#0D7A68" />
+              <Ionicons name="shield-checkmark" size={14} color="#400022" />
               <Text style={styles.badgeText}>NCK Licensed & DCI Good Conduct Verified</Text>
             </View>
           </View>
@@ -73,19 +73,19 @@ export const SpecialistDashboardScreen: React.FC = () => {
             value={isOnline}
             onValueChange={setIsOnline}
             trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-            thumbColor={isOnline ? '#0D7A68' : '#F1F5F9'}
+            thumbColor={isOnline ? '#400022' : '#F1F5F9'}
           />
         </View>
 
         {/* Key Metrics Grid */}
         <View style={styles.metricsGrid}>
           <View style={styles.metricCard}>
-            <Ionicons name="cash-outline" size={24} color="#0D7A68" />
+            <Ionicons name="cash-outline" size={24} color="#400022" />
             <Text style={styles.metricValue}>KSh 38,250</Text>
             <Text style={styles.metricLabel}>Net Payout Ready</Text>
           </View>
           <View style={styles.metricCard}>
-            <Ionicons name="calendar-outline" size={24} color="#0D7A68" />
+            <Ionicons name="calendar-outline" size={24} color="#400022" />
             <Text style={styles.metricValue}>28</Text>
             <Text style={styles.metricLabel}>Completed Shifts</Text>
           </View>
@@ -95,7 +95,7 @@ export const SpecialistDashboardScreen: React.FC = () => {
             <Text style={styles.metricLabel}>Client Rating</Text>
           </View>
           <View style={styles.metricCard}>
-            <Ionicons name="checkmark-done-circle-outline" size={24} color="#0D7A68" />
+            <Ionicons name="checkmark-done-circle-outline" size={24} color="#400022" />
             <Text style={styles.metricValue}>96%</Text>
             <Text style={styles.metricLabel}>Acceptance Rate</Text>
           </View>
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
   },
   badgeText: {
     fontSize: 11,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginLeft: 4,
   },
@@ -232,16 +232,16 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   avatarLetter: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
   },
   availabilityCard: {
     flexDirection: 'row',
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     color: '#0F172A',
   },
   countBadge: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     borderRadius: 10,
     paddingHorizontal: 8,
     paddingVertical: 2,
@@ -364,14 +364,14 @@ const styles = StyleSheet.create({
   },
   serviceName: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 2,
   },
   requestPrice: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
   },
   detailRow: {
     flexDirection: 'row',
@@ -389,7 +389,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 10,
     borderLeftWidth: 3,
-    borderLeftColor: '#0D7A68',
+    borderLeftColor: '#400022',
   },
   notesLabel: {
     fontSize: 11,
@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   acceptBtn: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
   },
   acceptText: {
     color: '#FFFFFF',
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
   },
   upcomingService: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 4,
   },

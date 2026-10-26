@@ -351,7 +351,11 @@ fun SpecialistDashboardScreen(
                     OutlinedTextField(
                         value = declineReason,
                         onValueChange = { declineReason = it },
-                        placeholder = { Text("e.g. Schedule clash with prior engagement...") },
+                        placeholder = { Text("e.g. Schedule clash with prior engagement...", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
@@ -363,9 +367,12 @@ fun SpecialistDashboardScreen(
                         declineTargetBookingId = null
                         declineReason = ""
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDC2626))
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFDC2626),
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Decline Request")
+                    Text("Decline Request", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {
@@ -533,11 +540,14 @@ fun SpecialistBookingActionCard(
                 Button(
                     onClick = onAccept,
                     shape = RoundedCornerShape(8.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    ),
                     contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
                     modifier = Modifier.testTag("accept_booking_btn_${booking.id}")
                 ) {
-                    Text("Accept Booking", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                    Text("Accept Booking", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }

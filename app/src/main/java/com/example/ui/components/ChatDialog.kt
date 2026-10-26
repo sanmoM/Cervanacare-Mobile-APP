@@ -186,7 +186,11 @@ fun ChatDialog(
                     OutlinedTextField(
                         value = inputText,
                         onValueChange = onInputChange,
-                        placeholder = { Text("Write a message...", fontSize = 13.sp) },
+                        placeholder = { Text("Write a message...", fontSize = 13.sp, color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier
                             .weight(1f)
                             .testTag("chat_input_field"),

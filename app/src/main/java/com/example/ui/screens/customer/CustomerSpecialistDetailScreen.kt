@@ -99,10 +99,13 @@ fun CustomerSpecialistDetailScreen(
                         Button(
                             onClick = onBookNow,
                             shape = RoundedCornerShape(12.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = CervannaTealPrimary,
+                                contentColor = Color.White
+                            ),
                             modifier = Modifier.testTag("detail_book_now_btn")
                         ) {
-                            Text("Book Now", fontWeight = FontWeight.Bold)
+                            Text("Book Now", fontWeight = FontWeight.Bold, color = Color.White)
                         }
                     }
                 }

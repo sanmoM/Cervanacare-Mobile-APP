@@ -78,7 +78,7 @@ export const AccountScreen: React.FC = () => {
         <View style={styles.card}>
           <Text style={styles.sectionHeader}>Service Location</Text>
           <View style={styles.row}>
-            <Ionicons name="location" size={20} color="#0D7A68" />
+            <Ionicons name="location" size={20} color="#400022" />
             <View style={styles.rowTextWrap}>
               <Text style={styles.rowTitle}>Primary Address</Text>
               <Text style={styles.rowSubtitle}>Eastern Bypass, Ruiru, Kiambu / Nairobi</Text>
@@ -100,8 +100,8 @@ export const AccountScreen: React.FC = () => {
             <Switch
               value={pushEnabled}
               onValueChange={setPushEnabled}
-              trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={pushEnabled ? '#0D7A68' : '#F1F5F9'}
+              trackColor={{ false: '#CBD5E1', true: '#FBE8F0' }}
+              thumbColor={pushEnabled ? '#400022' : '#F1F5F9'}
             />
           </View>
           <View style={styles.toggleRow}>
@@ -112,8 +112,8 @@ export const AccountScreen: React.FC = () => {
             <Switch
               value={smsEnabled}
               onValueChange={setSmsEnabled}
-              trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={smsEnabled ? '#0D7A68' : '#F1F5F9'}
+              trackColor={{ false: '#CBD5E1', true: '#FBE8F0' }}
+              thumbColor={smsEnabled ? '#400022' : '#F1F5F9'}
             />
           </View>
           <View style={styles.toggleRow}>
@@ -124,8 +124,8 @@ export const AccountScreen: React.FC = () => {
             <Switch
               value={emailEnabled}
               onValueChange={setEmailEnabled}
-              trackColor={{ false: '#CBD5E1', true: '#94E0D1' }}
-              thumbColor={emailEnabled ? '#0D7A68' : '#F1F5F9'}
+              trackColor={{ false: '#CBD5E1', true: '#FBE8F0' }}
+              thumbColor={emailEnabled ? '#400022' : '#F1F5F9'}
             />
           </View>
         </View>
@@ -134,7 +134,7 @@ export const AccountScreen: React.FC = () => {
         <View style={styles.card}>
           <Text style={styles.sectionHeader}>Help & Emergency Support</Text>
           <TouchableOpacity style={styles.menuItem} onPress={handleCallSupport}>
-            <Ionicons name="call" size={20} color="#0D7A68" />
+            <Ionicons name="call" size={20} color="#400022" />
             <View style={styles.menuItemTextWrap}>
               <Text style={styles.menuItemTitle}>24/7 Kenya Care Hotline</Text>
               <Text style={styles.menuItemSubtitle}>+254 700 225533 (Nairobi)</Text>
@@ -143,7 +143,7 @@ export const AccountScreen: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem} onPress={handleOpenHelpWebsite}>
-            <Ionicons name="globe-outline" size={20} color="#0D7A68" />
+            <Ionicons name="globe-outline" size={20} color="#400022" />
             <View style={styles.menuItemTextWrap}>
               <Text style={styles.menuItemTitle}>Visit cervannacare.com</Text>
               <Text style={styles.menuItemSubtitle}>Terms, Care Policy & FAQ</Text>
@@ -209,16 +209,16 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   avatarInitials: {
     fontSize: 28,
     fontWeight: '800',
-    color: '#0D7A68',
+    color: '#400022',
   },
   userName: {
     fontSize: 20,
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
   },
   userRole: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 2,
   },
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
   editLink: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#0D7A68',
+    color: '#400022',
   },
   toggleRow: {
     flexDirection: 'row',

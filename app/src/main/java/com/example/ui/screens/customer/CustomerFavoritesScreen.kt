@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.model.Specialist
+import androidx.compose.ui.graphics.Color
 import com.example.ui.theme.*
 
 @Composable
@@ -79,10 +80,13 @@ fun CustomerFavoritesScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
                         onClick = onExploreClick,
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaTealPrimary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(10.dp)
                     ) {
-                        Text("Browse Specialists")
+                        Text("Browse Specialists", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }

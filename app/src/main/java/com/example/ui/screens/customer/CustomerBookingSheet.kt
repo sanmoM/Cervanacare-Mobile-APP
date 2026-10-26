@@ -148,7 +148,28 @@ fun CustomerBookingSheet(
                         FilterChip(
                             selected = isSel,
                             onClick = { onShiftChange(shift) },
-                            label = { Text(shift, fontSize = 11.sp) },
+                            label = {
+                                Text(
+                                    text = shift,
+                                    fontSize = 11.sp,
+                                    color = if (isSel) Color.White else CervannaTealPrimary,
+                                    fontWeight = if (isSel) FontWeight.Bold else FontWeight.Medium
+                                )
+                            },
+                            colors = FilterChipDefaults.filterChipColors(
+                                containerColor = Color.White,
+                                labelColor = CervannaTealPrimary,
+                                iconColor = CervannaTealPrimary,
+                                selectedContainerColor = CervannaTealPrimary,
+                                selectedLabelColor = Color.White,
+                                selectedLeadingIconColor = Color.White
+                            ),
+                            border = FilterChipDefaults.filterChipBorder(
+                                enabled = true,
+                                selected = isSel,
+                                borderColor = CervannaTealPrimary.copy(alpha = 0.5f),
+                                selectedBorderColor = CervannaTealPrimary
+                            ),
                             modifier = Modifier.padding(end = 6.dp)
                         )
                     }
@@ -166,6 +187,11 @@ fun CustomerBookingSheet(
                     OutlinedTextField(
                         value = location,
                         onValueChange = onLocationChange,
+                        placeholder = { Text("e.g. Kilimani, Nairobi", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier.fillMaxWidth().testTag("booking_location_input"),
                         leadingIcon = { Icon(Icons.Default.LocationOn, contentDescription = null, tint = CervannaTealPrimary) },
                         shape = RoundedCornerShape(12.dp)
@@ -182,6 +208,11 @@ fun CustomerBookingSheet(
                     OutlinedTextField(
                         value = startDate,
                         onValueChange = onStartDateChange,
+                        placeholder = { Text("e.g. 28 Oct 2026", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         modifier = Modifier.fillMaxWidth().testTag("booking_start_date_input"),
                         leadingIcon = { Icon(Icons.Default.CalendarToday, contentDescription = null, tint = CervannaTealPrimary) },
                         shape = RoundedCornerShape(12.dp)
@@ -220,7 +251,11 @@ fun CustomerBookingSheet(
                     OutlinedTextField(
                         value = requirements,
                         onValueChange = onRequirementsChange,
-                        placeholder = { Text("e.g. Post-operative wound dressing, assistance with mobility, medication reminders at 8 AM and 6 PM...", fontSize = 12.sp) },
+                        placeholder = { Text("e.g. Post-operative wound dressing, assistance with mobility, medication reminders at 8 AM and 6 PM...", fontSize = 12.sp, color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        ),
                         minLines = 4,
                         maxLines = 6,
                         modifier = Modifier.fillMaxWidth().testTag("booking_requirements_input"),
@@ -314,22 +349,28 @@ fun CustomerBookingSheet(
                 if (currentStep < 4) {
                     Button(
                         onClick = { onStepChange(currentStep + 1) },
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaTealPrimary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.testTag("booking_next_step_btn")
                     ) {
-                        Text("Continue", fontWeight = FontWeight.Bold)
+                        Text("Continue", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 } else {
                     Button(
                         onClick = { onSubmitBooking(true) },
-                        colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MpesaGreen,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.testTag("submit_booking_mpesa_btn")
                     ) {
-                        Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp))
+                        Icon(Icons.Default.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("Pay via M-Pesa & Confirm", fontWeight = FontWeight.Bold)
+                        Text("Pay via M-Pesa & Confirm", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }

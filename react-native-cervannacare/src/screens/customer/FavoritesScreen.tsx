@@ -144,16 +144,16 @@ const styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 12,
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   avatarLetter: {
     fontSize: 20,
     fontWeight: '800',
-    color: '#0D7A68',
+    color: '#400022',
   },
   cardInfo: {
     flex: 1,
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   category: {
     fontSize: 12,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 2,
   },
@@ -204,10 +204,10 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#0D7A68',
+    color: '#400022',
   },
   bookButton: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingHorizontal: 14,
     paddingVertical: 6,
     borderRadius: 8,
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   },
   exploreButton: {
     marginTop: 20,
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 10,

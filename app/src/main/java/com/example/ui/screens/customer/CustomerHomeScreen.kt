@@ -91,7 +91,11 @@ fun CustomerHomeScreen(
                         selectedLocation = locations[nextIdx]
                         onLocationChange(selectedLocation)
                     },
-                    label = { Text("Change", fontSize = 11.sp) },
+                    label = { Text("Change", fontSize = 11.sp, color = CervannaTealPrimary, fontWeight = FontWeight.SemiBold) },
+                    colors = AssistChipDefaults.assistChipColors(
+                        containerColor = CervannaSurfaceVariant,
+                        labelColor = CervannaTealPrimary
+                    ),
                     modifier = Modifier.testTag("change_location_chip")
                 )
             }
@@ -113,7 +117,7 @@ fun CustomerHomeScreen(
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
                     )
-                    // Dark teal gradient overlay for readability
+                    // Dark burgundy gradient overlay for readability
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -121,8 +125,8 @@ fun CustomerHomeScreen(
                                 Brush.verticalGradient(
                                     colors = listOf(
                                         Color.Transparent,
-                                        Color(0xCC09584B),
-                                        Color(0xF0064E3B)
+                                        Color(0xCC400022),
+                                        Color(0xF0280015)
                                     ),
                                     startY = 60f
                                 )
@@ -405,11 +409,14 @@ fun CustomerHomeScreen(
                     }
                     Button(
                         onClick = onSupportClick,
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaAmberSecondary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaAmberSecondary,
+                            contentColor = Color.White
+                        ),
                         shape = RoundedCornerShape(8.dp),
                         contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
                     ) {
-                        Text("Call", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                        Text("Call", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }
@@ -655,17 +662,20 @@ fun SpecialistCard(
                         shape = RoundedCornerShape(10.dp),
                         contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
                     ) {
-                        Text("Profile", fontSize = 12.sp)
+                        Text("Profile", fontSize = 12.sp, color = CervannaTealPrimary, fontWeight = FontWeight.SemiBold)
                     }
 
                     Button(
                         onClick = onBookClick,
                         shape = RoundedCornerShape(10.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = CervannaTealPrimary,
+                            contentColor = Color.White
+                        ),
                         contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp),
                         modifier = Modifier.testTag("book_btn_${specialist.id}")
                     ) {
-                        Text("Book Now", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                        Text("Book Now", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }

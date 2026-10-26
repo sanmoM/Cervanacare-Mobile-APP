@@ -286,17 +286,32 @@ fun SpecialistProfileScreen(
                     OutlinedTextField(
                         value = hourlyInput,
                         onValueChange = { hourlyInput = it },
-                        label = { Text("Hourly Session Rate") }
+                        label = { Text("Hourly Session Rate") },
+                        placeholder = { Text("e.g. 500", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        )
                     )
                     OutlinedTextField(
                         value = dailyInput,
                         onValueChange = { dailyInput = it },
-                        label = { Text("Daily Shift Rate") }
+                        label = { Text("Daily Shift Rate") },
+                        placeholder = { Text("e.g. 3500", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        )
                     )
                     OutlinedTextField(
                         value = monthlyInput,
                         onValueChange = { monthlyInput = it },
-                        label = { Text("Monthly Rate") }
+                        label = { Text("Monthly Rate") },
+                        placeholder = { Text("e.g. 60000", color = CervannaPlaceholder) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedPlaceholderColor = CervannaPlaceholder,
+                            unfocusedPlaceholderColor = CervannaPlaceholder
+                        )
                     )
                 }
             },
@@ -309,9 +324,12 @@ fun SpecialistProfileScreen(
                         onUpdateRates(h, d, m)
                         showEditRatesDialog = false
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Text("Save Rates")
+                    Text("Save Rates", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {
@@ -327,8 +345,14 @@ fun SpecialistProfileScreen(
             title = { Text("Upload Credentials for Verification") },
             text = { Text("You can upload updated regulatory licenses, CPR certifications, or police clearance. Documents will be securely reviewed by Cervanna Care compliance administration.") },
             confirmButton = {
-                Button(onClick = { showDocUploadAlert = false }, colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary)) {
-                    Text("Choose Document File")
+                Button(
+                    onClick = { showDocUploadAlert = false },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    )
+                ) {
+                    Text("Choose Document File", fontWeight = FontWeight.Bold, color = Color.White)
                 }
             },
             dismissButton = {

@@ -77,7 +77,7 @@ export default function CustomerHomeScreen({ navigation }: any) {
             <View style={{ flex: 1 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
                 <Text style={styles.specName}>{spec.name}</Text>
-                <Text style={{ color: '#0D7A68' }}>✓</Text>
+                <Text style={{ color: '#400022' }}>✓</Text>
               </View>
               <Text style={styles.specTitle}>{spec.title}</Text>
               <Text style={styles.specMeta}>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   locationLabel: { fontSize: 12, color: '#64748B' },
   locationVal: { fontSize: 12, fontWeight: 'bold', color: '#0F172A' },
   heroCard: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     margin: 16,
     borderRadius: 18,
     padding: 18,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   sectionTitle: { fontSize: 16, fontWeight: 'bold', color: '#0F172A' },
-  seeAll: { fontSize: 12, fontWeight: '600', color: '#0D7A68' },
+  seeAll: { fontSize: 12, fontWeight: '600', color: '#400022' },
   servicesScroll: { paddingLeft: 16, marginBottom: 16 },
   serviceCard: {
     width: 120,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     width: 34,
     height: 34,
     borderRadius: 8,
-    backgroundColor: '#CCFBF1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -174,14 +174,14 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     justifyContent: 'center',
     alignItems: 'center',
   },
   specAvatarText: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 },
   specName: { fontSize: 14, fontWeight: 'bold', color: '#0F172A' },
   specTitle: { fontSize: 11, color: '#64748B', marginTop: 1 },
-  specMeta: { fontSize: 11, color: '#0D7A68', marginTop: 3 },
+  specMeta: { fontSize: 11, color: '#400022', marginTop: 3 },
   specFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#F1F5F9',
   },
-  specRate: { fontSize: 13, fontWeight: 'bold', color: '#09584B' },
-  bookBtn: { backgroundColor: '#0D7A68', borderRadius: 8, paddingVertical: 6, paddingHorizontal: 14 },
+  specRate: { fontSize: 13, fontWeight: 'bold', color: '#400022' },
+  bookBtn: { backgroundColor: '#400022', borderRadius: 8, paddingVertical: 6, paddingHorizontal: 14 },
   bookBtnText: { color: '#FFFFFF', fontSize: 12, fontWeight: 'bold' },
   hotlineCard: {
     backgroundColor: '#FEF3C7',

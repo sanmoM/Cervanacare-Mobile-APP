@@ -41,7 +41,7 @@ export const SpecialistProfileScreen: React.FC = () => {
           <Text style={styles.name}>{user?.fullName || 'Nurse Faith Muthoni'}</Text>
           <Text style={styles.category}>Registered Nurse (NCK Licensed)</Text>
           <View style={styles.verifiedTag}>
-            <Ionicons name="shield-checkmark" size={14} color="#0D7A68" />
+            <Ionicons name="shield-checkmark" size={14} color="#400022" />
             <Text style={styles.verifiedText}>DCI Good Conduct Verified</Text>
           </View>
         </View>
@@ -84,7 +84,7 @@ export const SpecialistProfileScreen: React.FC = () => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Verified Credentials</Text>
           <View style={styles.credentialRow}>
-            <Ionicons name="ribbon" size={20} color="#0D7A68" />
+            <Ionicons name="ribbon" size={20} color="#400022" />
             <View style={styles.credTextWrap}>
               <Text style={styles.credTitle}>Nursing Council of Kenya (NCK)</Text>
               <Text style={styles.credSubtitle}>License #NCK-2021-9481 • Active</Text>
@@ -93,7 +93,7 @@ export const SpecialistProfileScreen: React.FC = () => {
           </View>
 
           <View style={styles.credentialRow}>
-            <Ionicons name="document-text" size={20} color="#0D7A68" />
+            <Ionicons name="document-text" size={20} color="#400022" />
             <View style={styles.credTextWrap}>
               <Text style={styles.credTitle}>DCI Certificate of Good Conduct</Text>
               <Text style={styles.credSubtitle}>Biometric clearance passed • Verified 2026</Text>
@@ -137,16 +137,16 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: '#E6F4F1',
+    backgroundColor: '#FBE8F0',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#0D7A68',
+    borderColor: '#400022',
   },
   avatarLetter: {
     fontSize: 26,
     fontWeight: '800',
-    color: '#0D7A68',
+    color: '#400022',
   },
   name: {
     fontSize: 20,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   },
   category: {
     fontSize: 13,
-    color: '#0D7A68',
+    color: '#400022',
     fontWeight: '600',
     marginTop: 2,
   },
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   saveButton: {
-    backgroundColor: '#0D7A68',
+    backgroundColor: '#400022',
     marginHorizontal: 16,
     marginTop: 20,
     paddingVertical: 14,

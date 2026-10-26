@@ -1,13 +1,14 @@
 package com.example.ui.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,24 +21,36 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import com.example.ui.theme.*
 
 @Composable
 fun SupportDialog(
     onDismiss: () -> Unit
 ) {
-    Dialog(onDismissRequest = onDismiss) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false,
+            dismissOnBackPress = true,
+            dismissOnClickOutside = true
+        )
+    ) {
         Surface(
             shape = RoundedCornerShape(24.dp),
             color = CervannaSurface,
             tonalElevation = 6.dp,
+            shadowElevation = 12.dp,
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
+                .fillMaxWidth(0.92f)
+                .widthIn(max = 420.dp)
+                .wrapContentHeight()
+                .padding(vertical = 20.dp)
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .verticalScroll(rememberScrollState())
                     .padding(20.dp)
             ) {
                 // Header
@@ -48,11 +61,12 @@ fun SupportDialog(
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        modifier = Modifier.weight(1f)
                     ) {
                         Box(
                             modifier = Modifier
-                                .size(40.dp)
+                                .size(42.dp)
                                 .clip(CircleShape)
                                 .background(CervannaTealContainer),
                             contentAlignment = Alignment.Center
@@ -73,7 +87,7 @@ fun SupportDialog(
                             )
                             Text(
                                 text = "24/7 Home Care Help & Inquiries",
-                                fontSize = 11.sp,
+                                fontSize = 11.5.sp,
                                 color = CervannaTextSecondary
                             )
                         }
@@ -81,93 +95,132 @@ fun SupportDialog(
 
                     IconButton(
                         onClick = onDismiss,
-                        modifier = Modifier.size(28.dp)
+                        modifier = Modifier
+                            .size(32.dp)
+                            .clip(CircleShape)
+                            .background(CervannaSurfaceVariant)
                     ) {
                         Icon(
-                            imageVector = Icons.Outlined.Close,
+                            imageVector = Icons.Default.Close,
                             contentDescription = "Close",
-                            tint = CervannaTextTertiary
+                            tint = CervannaTextSecondary,
+                            modifier = Modifier.size(16.dp)
                         )
                     }
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Contact channels
-                SupportContactItem(
+                // Contact Channel 1: Phone / WhatsApp Dispatch
+                SupportContactCard(
                     icon = Icons.Default.Phone,
+                    iconBgColor = CervannaTealContainer,
+                    iconTint = CervannaTealPrimary,
                     title = "Call / WhatsApp Dispatch",
                     subtitle = "+254 700 225533",
                     badge = "24/7 Available",
-                    badgeColor = CervannaTealPrimary
+                    badgeColor = Color(0xFF15803D),
+                    badgeBgColor = Color(0xFFDCFCE7),
+                    extraInfo = "Fast direct response for urgent care & dispatch"
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                SupportContactItem(
+                // Contact Channel 2: Customer Support Email
+                SupportContactCard(
                     icon = Icons.Default.Email,
+                    iconBgColor = CervannaAmberContainer,
+                    iconTint = CervannaAmberSecondary,
                     title = "Customer Support Email",
                     subtitle = "customersupport@cervannacare.com",
                     badge = "Replies in 15m",
-                    badgeColor = CervannaAmberSecondary
+                    badgeColor = Color(0xFFB45309),
+                    badgeBgColor = Color(0xFFFEF3C7),
+                    extraInfo = "Billing, bookings, special requests & feedback"
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                SupportContactItem(
+                // Contact Channel 3: Physical Hub
+                SupportContactCard(
                     icon = Icons.Default.LocationOn,
-                    title = "Physical Care Coordination Hub",
-                    subtitle = "Eastern Bypass, Kamakis, Nairobi, Kenya",
+                    iconBgColor = CervannaTealContainer,
+                    iconTint = CervannaTealPrimary,
+                    title = "Physical Coordination Hub",
+                    subtitle = "Eastern Bypass, Kamakis, Nairobi",
                     badge = "Hub Office",
-                    badgeColor = CervannaTextSecondary
+                    badgeColor = CervannaTealPrimary,
+                    badgeBgColor = CervannaTealContainer,
+                    extraInfo = "Greenspot Towers • Mon - Sat 8:00 AM – 7:00 PM"
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
                 // Guarantee Banner
                 Card(
-                    colors = CardDefaults.cardColors(containerColor = CervannaSurfaceVariant),
+                    colors = CardDefaults.cardColors(containerColor = CervannaTealContainer.copy(alpha = 0.5f)),
                     shape = RoundedCornerShape(12.dp),
+                    border = BorderStroke(1.dp, CervannaTealPrimary.copy(alpha = 0.2f)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Row(
                         modifier = Modifier.padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically,
+                        verticalAlignment = Alignment.Top,
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         Icon(
                             imageVector = Icons.Default.VerifiedUser,
                             contentDescription = null,
                             tint = CervannaTealPrimary,
-                            modifier = Modifier.size(24.dp)
+                            modifier = Modifier
+                                .size(22.dp)
+                                .padding(top = 2.dp)
                         )
-                        Column {
+                        Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                             Text(
                                 text = "100% Vetted & Verified Guarantee",
-                                fontWeight = FontWeight.SemiBold,
+                                fontWeight = FontWeight.Bold,
                                 fontSize = 12.sp,
-                                color = CervannaTextPrimary
+                                color = CervannaTealPrimary
                             )
                             Text(
                                 text = "All specialists are verified with DCI Good Conduct certificates & healthcare regulatory licenses.",
                                 fontSize = 11.sp,
-                                color = CervannaTextSecondary
+                                color = CervannaTextSecondary,
+                                lineHeight = 15.sp
                             )
                         }
                     }
                 }
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
+                // Close Button
                 Button(
                     onClick = onDismiss,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .height(48.dp)
                         .testTag("support_close_button"),
-                    colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = CervannaTealPrimary,
+                        contentColor = Color.White
+                    ),
                     shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text("Close", fontWeight = FontWeight.Bold)
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "Got It, Close",
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+                        fontSize = 13.sp
+                    )
                 }
             }
         }
@@ -175,70 +228,92 @@ fun SupportDialog(
 }
 
 @Composable
-private fun SupportContactItem(
+private fun SupportContactCard(
     icon: ImageVector,
+    iconBgColor: Color,
+    iconTint: Color,
     title: String,
     subtitle: String,
     badge: String,
-    badgeColor: Color
+    badgeColor: Color,
+    badgeBgColor: Color,
+    extraInfo: String? = null
 ) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = CervannaSurfaceVariant.copy(alpha = 0.6f)),
-        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = CervannaSurfaceVariant.copy(alpha = 0.65f)),
+        shape = RoundedCornerShape(14.dp),
+        border = BorderStroke(1.dp, CervannaBorder.copy(alpha = 0.8f)),
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+            verticalAlignment = Alignment.Top,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Box(
                 modifier = Modifier
                     .size(38.dp)
                     .clip(CircleShape)
-                    .background(Color.White),
+                    .background(iconBgColor),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = icon,
                     contentDescription = null,
-                    tint = CervannaTealPrimary,
+                    tint = iconTint,
                     modifier = Modifier.size(20.dp)
                 )
             }
 
-            Column(modifier = Modifier.weight(1f)) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(3.dp)
+            ) {
                 Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = title,
                         fontSize = 11.sp,
-                        color = CervannaTextSecondary
+                        fontWeight = FontWeight.Medium,
+                        color = CervannaTextSecondary,
+                        modifier = Modifier.weight(1f, fill = false)
                     )
-                    Box(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(4.dp))
-                            .background(badgeColor.copy(alpha = 0.15f))
-                            .padding(horizontal = 4.dp, vertical = 1.dp)
+
+                    Surface(
+                        shape = RoundedCornerShape(100.dp),
+                        color = badgeBgColor
                     ) {
                         Text(
                             text = badge,
-                            fontSize = 9.sp,
+                            fontSize = 9.5.sp,
                             fontWeight = FontWeight.Bold,
-                            color = badgeColor
+                            color = badgeColor,
+                            modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.dp),
+                            maxLines = 1,
+                            softWrap = false
                         )
                     }
                 }
+
                 Text(
                     text = subtitle,
-                    fontWeight = FontWeight.SemiBold,
+                    fontWeight = FontWeight.Bold,
                     fontSize = 13.sp,
                     color = CervannaTextPrimary
                 )
+
+                if (extraInfo != null) {
+                    Text(
+                        text = extraInfo,
+                        fontSize = 10.5.sp,
+                        color = CervannaTextSecondary
+                    )
+                }
             }
         }
     }

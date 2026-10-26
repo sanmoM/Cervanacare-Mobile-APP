@@ -245,12 +245,15 @@ fun SpecialistAvailabilityScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("save_availability_button"),
-                colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = CervannaTealPrimary,
+                    contentColor = Color.White
+                ),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(18.dp))
+                Icon(Icons.Default.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(6.dp))
-                Text("Save Availability Schedule", fontWeight = FontWeight.Bold)
+                Text("Save Availability Schedule", fontWeight = FontWeight.Bold, color = Color.White)
             }
         }
     }

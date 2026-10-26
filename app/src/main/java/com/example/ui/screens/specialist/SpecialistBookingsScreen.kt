@@ -180,20 +180,26 @@ fun SpecialistBookingsScreen(
                                     if (booking.status == BookingStatus.PENDING) {
                                         Button(
                                             onClick = { onAcceptBooking(booking.id) },
-                                            colors = ButtonDefaults.buttonColors(containerColor = CervannaTealPrimary),
+                                            colors = ButtonDefaults.buttonColors(
+                                                containerColor = CervannaTealPrimary,
+                                                contentColor = Color.White
+                                            ),
                                             shape = RoundedCornerShape(8.dp),
                                             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp)
                                         ) {
-                                            Text("Accept", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                            Text("Accept", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
                                         }
                                     } else if (booking.status == BookingStatus.CONFIRMED) {
                                         Button(
                                             onClick = { onCompleteBooking(booking.id) },
-                                            colors = ButtonDefaults.buttonColors(containerColor = MpesaGreen),
+                                            colors = ButtonDefaults.buttonColors(
+                                                containerColor = MpesaGreen,
+                                                contentColor = Color.White
+                                            ),
                                             shape = RoundedCornerShape(8.dp),
                                             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp)
                                         ) {
-                                            Text("Mark Done", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                            Text("Mark Done", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
                                         }
                                     }
                                 }

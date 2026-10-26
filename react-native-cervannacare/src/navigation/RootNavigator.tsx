@@ -29,7 +29,7 @@ function CustomerTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#0D7A68',
+        tabBarActiveTintColor: '#400022',
         tabBarInactiveTintColor: '#64748B',
         tabBarStyle: { height: 62, paddingBottom: 8, paddingTop: 6 },
         headerStyle: { backgroundColor: '#FFFFFF' },
@@ -90,7 +90,7 @@ function SpecialistTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#0D7A68',
+        tabBarActiveTintColor: '#400022',
         tabBarInactiveTintColor: '#64748B',
         tabBarStyle: { height: 62, paddingBottom: 8, paddingTop: 6 },
         headerStyle: { backgroundColor: '#FFFFFF' },
@@ -153,7 +153,7 @@ export default function RootNavigator() {
   if (isLoading) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F8FAFC' }}>
-        <ActivityIndicator size="large" color="#0D7A68" />
+        <ActivityIndicator size="large" color="#400022" />
       </View>
     );
   }
